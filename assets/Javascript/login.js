@@ -1,9 +1,14 @@
+// 點擊外圍關閉登入/註冊
 var modal = document.getElementById('login');
-window.onclick = function(event) {
+
+function closeModal(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+
+window.onclick = closeModal;
+window.ontouchstart = closeModal;
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
