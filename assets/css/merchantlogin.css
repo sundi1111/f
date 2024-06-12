@@ -167,6 +167,11 @@ button:hover {
         margin: 18px 50px 0 50px;
     }
 
+    button:hover {
+        padding: 10px;
+        margin: 18px 50px 0 50px;
+    }
+
 }
 
 @media (min-width: 440px) and (max-width: 770px) {
