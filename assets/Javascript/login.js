@@ -10,6 +10,17 @@ function closeModal(event) {
 window.onclick = closeModal;
 window.ontouchstart = closeModal;
 
+// 日期抓取
+document.addEventListener('DOMContentLoaded', (event) => {
+    var today = new Date();
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var formattedToday = yyyy + '-' + mm + '-' + dd;
+
+    document.getElementById('birthday').value = formattedToday;
+});
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
