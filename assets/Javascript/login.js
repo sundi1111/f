@@ -12,16 +12,13 @@ window.ontouchstart = closeModal;
 
 // 註冊生日
 document.addEventListener('DOMContentLoaded', (event) => {
-var input = document.getElementById('birthday');
-var today = new Date();
-var yyyy = today.getFullYear();
-var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
-var dd = String(today.getDate()).padStart(2, '0');
-var formattedToday = yyyy + '-' + mm + '-' + dd;
+    var today = new Date();
+    var yyyy = today.getFullYear();
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var dd = String(today.getDate()).padStart(2, '0');
+    var formattedToday = yyyy + '-' + mm + '-' + dd;
 
-input.value = formattedToday;
-input.value = '';
-
+    document.getElementById('birthday').value = formattedToday;
 });
 
 // 登入註冊頁面切換
