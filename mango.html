@@ -175,18 +175,20 @@
                     <p class="money">NT. <span>180</span></p>
                     <p class="stock">庫存數量：<span>33</span></p>
                 </div>
-                <div class="add">
-                    <div class="up">
-                        <button class="upB" id="minus"><iconify-icon icon="icon-park:minus"></iconify-icon></button>
-                        <input class="upIn" id="iquantity" type="text" value="1"/>
-                        <button class="upB" id="plus"><iconify-icon icon="icon-park:plus"></iconify-icon></button>
+                <form id="submit-form" method="POST" action="">
+                    <div class="add">
+                        <div class="up">
+                            <button type="button" class="upB minus" id="minus"><iconify-icon icon="icon-park:minus"></iconify-icon></button>
+                            <input class="upIn product-quantity" id="iquantity" name="quantity" type="text" value="1"/>
+                            <button type="button" class="upB add" id="plus"><iconify-icon icon="icon-park:plus"></iconify-icon></button>
+                        </div>
+                        <div class="downchoi">
+                            <button type="submit" class="dB submit-button"><iconify-icon icon="mdi-light:cart"></iconify-icon>&nbsp;加入購物車</button>  
+                            <button type="button" class="dB fav"><iconify-icon icon="ph:hand-heart"></iconify-icon>&nbsp;加入追蹤清單</button>   
+                        </div>
                     </div>
-                    <div class="downchoi">
-                        <button type="submit" class="dB add"><iconify-icon icon="mdi-light:cart"></iconify-icon>&nbsp;加入購物車</button>  
-                        <button type="submit" class="dB fav"><iconify-icon icon="ph:hand-heart"></iconify-icon>&nbsp;加入追蹤清單</button>   
-                    </div>
-                </div>
-            </div>
+                </form>
+            </div>                  
         </div>
 
         <div class="productDescription">

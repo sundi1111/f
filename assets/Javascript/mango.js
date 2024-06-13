@@ -4,10 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('mainImage');
     const upButton = document.getElementById('upButton');
     const downButton = document.getElementById('downButton');
+    const submitForm = document.getElementById('submit-form');
+    const quantityInput = document.querySelector('.product-quantity');
     const minusButton = document.getElementById('minus');
     const plusButton = document.getElementById('plus');
-    const quantityInput = document.getElementById('iquantity');
     let scrollIndex = 0;
+    let quantity = parseInt(quantityInput.value, 10);
+    const stock = parseInt(document.querySelector('.stock span').textContent, 10);
 
     function updateSelectedThumbnail() {
         thumbnails.forEach((thumbnail, index) => {
@@ -67,32 +70,51 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSelectedThumbnail();
 
     minusButton.addEventListener('click', () => {
-        let quantity = parseInt(quantityInput.value, 10);
         if (quantity > 1) {
-            quantityInput.value = quantity - 1;
+            quantity--;
+            quantityInput.value = quantity;
         }
     });
 
     plusButton.addEventListener('click', () => {
-        let quantity = parseInt(quantityInput.value, 10);
-        quantityInput.value = quantity + 1;
+        if (quantity < stock) {
+            quantity++;
+            quantityInput.value = quantity;
+        } else {
+            alert('已達庫存上限');
+        }
+    });
+
+    submitForm.addEventListener('submit', (e) => {
+        if (quantity > stock) {
+            e.preventDefault();
+            alert('商品庫存不足，無法加入購物車');
+        }
     });
 });
+
+
+
 
 // 內容切換
 
-document.querySelectorAll('.tab-radio').forEach(function(tabRadio) {
-    tabRadio.addEventListener('change', function() {
-        var tabId = this.id.replace('-radio', '');
-        document.querySelectorAll('.tab-content').forEach(function(tabContent) {
-            tabContent.classList.remove('active');
-            tabContent.classList.add('hidden');
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.tab-radio').forEach(function(tabRadio) {
+        tabRadio.addEventListener('change', function() {
+            var tabId = this.id;
+            document.querySelectorAll('.tab-content').forEach(function(tabContent) {
+                tabContent.classList.remove('active');
+                tabContent.classList.add('hidden');
+            });
+            var activeTabContent = document.getElementById(tabId + '-content');
+            activeTabContent.classList.remove('hidden');
+            activeTabContent.classList.add('active');
         });
-        var activeTabContent = document.getElementById(tabId + '-content');
-        activeTabContent.classList.remove('hidden');
-        activeTabContent.classList.add('active');
     });
+
+    document.querySelector('.tab-radio:checked').dispatchEvent(new Event('change'));
 });
+
 
 // 推薦商品幻燈
 var slideIndex = 0;
