@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.textContent = step === 3 ? '結帳' : '下一步';
     };
 
-    prevButton.addEventListener('click', () => {
+    prevButton.addEventListener('click', (event) => {
+        event.preventDefault();
         if (stepNumber > 1) showStep(--stepNumber);
     });
 
     nextButton.addEventListener('click', (event) => {
+        event.preventDefault();
         if (stepNumber < 3) {
             showStep(++stepNumber);
         } else {
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showStep(stepNumber);
 });
+
 
 
 // 刪除商品
