@@ -285,8 +285,25 @@
             </div>    
             
             <div id="product-reviews-content" class="tab-content hidden">
+                <div class="WriteBox">
+                    <p class="describeTitle">我要評論</p><hr class="colorful">
+                    <div class="WriteComment">
+                        <form action="">
+                            <input id="title" type="text" name="title" placeholder="給它個標題吧！"><br>
+                            <p>寫下你的想法：</p><textarea id="content" name="" placeholder=""></textarea>
+                            <div class="starPoint" name="starPoint">
+                                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                                <input type="radio" name="star" id="star5"><label for="star5"></label>
+                            </div>
+                            <button class="commentBt" type="submit">送出</button>
+                        </form>
+                    </div>
+                </div>
                 <div class="CommentBox">
-                    <p class="describeTitle">評論紀錄</p><hr class="colorful">
+                    <!-- <p class="describeTitle">評論紀錄</p><hr class="colorful"> -->
                     <div class="showComment">
                         <div class="showHead">
                             <img src="assets/img/member.png" alt="memberImg" class="CommentHead">
@@ -392,24 +409,6 @@
                     </div>
                 </div>
                 <!-- 結束 -->
-                
-                <div class="WriteBox">
-                    <p class="describeTitle">我要評論</p><hr class="colorful">
-                    <div class="WriteComment">
-                        <form action="">
-                            <input id="title" type="text" name="title" placeholder="給它個標題吧！"><br>
-                            <p>寫下你的想法：</p><textarea id="content" name="" placeholder=""></textarea>
-                            <div class="starPoint" name="starPoint">
-                                <input type="radio" name="star" id="star1"><label for="star1"></label>
-                                <input type="radio" name="star" id="star2"><label for="star2"></label>
-                                <input type="radio" name="star" id="star3"><label for="star3"></label>
-                                <input type="radio" name="star" id="star4"><label for="star4"></label>
-                                <input type="radio" name="star" id="star5"><label for="star5"></label>
-                            </div>
-                            <button class="commentBt" type="submit">送出</button>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
     </main>

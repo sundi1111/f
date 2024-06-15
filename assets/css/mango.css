@@ -264,7 +264,6 @@
 }
 
 .describeTitle{
-    margin-top: 40px;
     font-weight: 400;
     margin-bottom: 10px;
     font-size: 20px;
@@ -354,6 +353,7 @@
 /* 評論大區塊 */
 #product-reviews-content{
     display: flex;
+    justify-content: space-around;
     margin: 10px 0;
 }
 
@@ -362,7 +362,7 @@
 .CommentBox {
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
+    margin-top: 30px;
 }
 
 .CommentBox2{
@@ -448,8 +448,6 @@
 
 .WriteBox{
     width: 450px;
-    margin-right: 50px;
-    margin-left: 20px;
 }
 
 .WriteBox input{
